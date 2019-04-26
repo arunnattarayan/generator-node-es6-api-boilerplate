@@ -1,4 +1,4 @@
-# generator-node-api-boilerplate [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+# generator-node-api-boilerplate [![NPM version][npm-image]][npm-url]
 > node js api boilerplate
 
 ## Installation
@@ -13,7 +13,7 @@ npm install -g generator-node-api-boilerplate
 Then generate your new project:
 
 ```bash
-yo generator-node-api-boilerplate
+yo node-api-boilerplate
 ```
 
 ## Getting To Know Yeoman
@@ -30,9 +30,3 @@ Apache-2.0 © [Arun Nattarayan]()
 
 [npm-image]: https://badge.fury.io/js/generator-node-api-boilerplate.svg
 [npm-url]: https://npmjs.org/package/generator-node-api-boilerplate
-[travis-image]: https://travis-ci.org/arunnattarayan/generator-node-api-boilerplate.svg?branch=master
-[travis-url]: https://travis-ci.org/arunnattarayan/generator-node-api-boilerplate
-[daviddm-image]: https://david-dm.org/arunnattarayan/generator-node-api-boilerplate.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/arunnattarayan/generator-node-api-boilerplate
-[coveralls-image]: https://coveralls.io/repos/arunnattarayan/generator-node-api-boilerplate/badge.svg
-[coveralls-url]: https://coveralls.io/r/arunnattarayan/generator-node-api-boilerplate

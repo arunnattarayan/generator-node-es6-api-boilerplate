@@ -1,8 +1,8 @@
 {
   "name": "generator-node-api-boilerplate",
-  "version": "0.1.1",
+  "version": "0.1.5",
   "description": "node js api boilerplate",
-  "homepage": "http://localhost:3000",
+  "homepage": "https://github.com/arunnattarayan/generator-node-es6-api-boilerplate",
   "author": {
     "name": "Arun Nattarayan",
     "email": "arunkumarit02@gmail.com"
@@ -12,7 +12,7 @@
   ],
   "main": "generators/index.js",
   "keywords": [
-    "yeoman-generator"
+    "yeoman-generator", "babel", "es6", "nodejs", "node", "api"
   ],
   "devDependencies": {
     "yeoman-test": "^1.7.0",
