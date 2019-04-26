@@ -1,4 +1,4 @@
-# generator-node-es6-api-boilerplate [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+# generator-node-api-boilerplate [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 > node js api boilerplate
 
 ## Installation
@@ -7,13 +7,13 @@ First, install [Yeoman](http://yeoman.io) and generator-node-api-boilerplate usi
 
 ```bash
 npm install -g yo
-npm install -g generator-node-es6-api-boilerplate
+npm install -g generator-node-api-boilerplate
 ```
 
 Then generate your new project:
 
 ```bash
-yo node-es6-api-boilerplate
+yo generator-node-api-boilerplate
 ```
 
 ## Getting To Know Yeoman
