@@ -9,7 +9,7 @@ export const should = chai.should();
 export const expect = chai.expect;
 
 after(async () => {
-  const collections = await mongoose.connection.db.dropDatabase();
+  await mongoose.connection.db.dropDatabase();
   process.exit(0);
 });
 

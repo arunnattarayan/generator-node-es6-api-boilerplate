@@ -4,14 +4,13 @@
 const Generator = require(`yeoman-generator`);
 const mkdirp = require(`mkdirp`);
 const yosay = require(`yosay`);
-const slugify = require(`slugg`);
 const chalk = require('chalk');
 const path = require('path');
 const MESSAGE = {
   INIT: `${chalk.yellow.bold('Welcome to Express Api ')} ${chalk.yellow('A solid JS stack to develop with')}`,
   CONFIG: `${chalk.yellow.bold('Started APP Configurations')}`,
   WRITE: `${chalk.yellow.bold('Creating App Files')}`,
-  END: `${chalk.green.bold('App files are created.') }`,
+  END: `${chalk.green.bold('App files are created.')}`,
   INSTALL: `${chalk.yellow.bold('Installling Dependencies')}`
 };
 const files = [
@@ -44,7 +43,7 @@ const files = [
 module.exports = class extends Generator {
   /* #region private methods */
   // copy(tPath('editorconfig'), dPath('.editorconfig'));
-  _createProjectFileSystem(props, copyOpts) {
+  _createProjectFileSystem (props, copyOpts) {
     files.forEach(f => {
       this.copyTpl(
         this.tPath(f),
@@ -54,25 +53,25 @@ module.exports = class extends Generator {
       );
     });
     this.copyTpl(
-      this.tPath("_package.json"),
+      this.tPath('_package.json'),
       this.dPath(`${props.dest}/package.json`),
       props
     );
   }
 
-  _log(message) {
+  _log (message) {
     this.log(yosay(message, { maxLength: 18 }));
   }
 
-  _yosay(message) {
+  _yosay (message) {
     this._log(yosay(message, { maxLength: 18 }));
   }
 
-  _getAppDir(props) {
+  _getAppDir (props) {
     return props.createDirectory ? path.join(process.cwd(), props.name) : process.cwd();
   }
 
-  _getPrompts() {
+  _getPrompts () {
     return [
       /* #region createDirectory */
       {
@@ -86,7 +85,7 @@ module.exports = class extends Generator {
         type: `input`,
         name: `name`,
         message: `Please enter your project name`,
-        when: function(props) {
+        when: function (props) {
           return props.createDirectory;
         },
         default: this.appname
@@ -119,7 +118,7 @@ module.exports = class extends Generator {
   /**
    * Override Generator constructor
    */
-  constructor(args, opts) {
+  constructor (args, opts) {
     super(args, opts);
     this.argument(`appname`, { type: String, required: false });
   }
@@ -127,43 +126,43 @@ module.exports = class extends Generator {
   /**
    * Display welcome message
    */
-  initializing() {
+  initializing () {
     this.log(yosay(MESSAGE.INIT, { maxLength: 18 }));
   }
 
   /**
    * Printing question to users
   */
-  prompting() {
+  prompting () {
     return this.prompt(this._getPrompts()).then(props => {
       this.props = props;
     });
   }
 
-  configuring() {
+  configuring () {
     this._log(MESSAGE.CONFIG);
   }
 
   /**
    * Compose other generators
    */
-  default() {
+  default () {
 
   }
 
   /**
    * Creating files
    */
-  writing() {
+  writing () {
     this._log(MESSAGE.WRITE);
     let props = this.props;
     props.projectName = props.name || this.appname;
     props.dest = props.name || `.`;
-    const src = this.sourceRoot();
-    const dest = this.destinationPath(props.dest);
+    this.sourceRoot();
+    this.destinationPath(props.dest);
     const copyOpts = {
       globOptions: {
-        ignore: ["_package.json"]
+        ignore: ['_package.json']
       }
     };
     this.copy = this.fs.copy.bind(this.fs);
@@ -179,14 +178,14 @@ module.exports = class extends Generator {
   /**
    * Display errors
    */
-  conflicts() {
+  conflicts () {
 
   }
 
   /**
    * Install npm modules
    */
-  install() {
+  install () {
     let props = this.props;
     process.chdir(this._getAppDir(props));
     if (props.installDependencies === `yarn`) {
@@ -199,7 +198,7 @@ module.exports = class extends Generator {
   /**
    * Post installation
    */
-  end() {
+  end () {
     let props = this.props;
     if (props.installDependencies === `yarn`) {
       this.spawnCommandSync(`yarn`, [`add`, `@babel/cli`, `--save dev`]);
