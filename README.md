@@ -1,4 +1,7 @@
 # generator-node-api-boilerplate [![NPM version][npm-image]][npm-url]
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ffa766246c674de0ab864139cd98a1b4)](https://app.codacy.com/app/arunnattarayan/generator-node-es6-api-boilerplate?utm_source=github.com&utm_medium=referral&utm_content=arunnattarayan/generator-node-es6-api-boilerplate&utm_campaign=Badge_Grade_Dashboard)
+
 > node js api boilerplate
 
 ## Installation
