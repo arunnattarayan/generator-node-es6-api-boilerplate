@@ -1,6 +1,6 @@
 {
   "name": "generator-node-api-boilerplate",
-  "version": "0.1.6",
+  "version": "0.1.6-beta.0",
   "description": "node js api boilerplate",
   "homepage": "https://github.com/arunnattarayan/generator-node-es6-api-boilerplate",
   "author": {
