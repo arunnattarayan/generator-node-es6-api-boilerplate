@@ -1,6 +1,6 @@
 {
   "name": "generator-node-api-boilerplate",
-  "version": "0.1.6-beta.0",
+  "version": "0.1.6",
   "description": "node js api boilerplate",
   "homepage": "https://generator-node-es6-api-boilerplate.readthedocs.io/en/latest/#express-app-generator",
   "author": {
