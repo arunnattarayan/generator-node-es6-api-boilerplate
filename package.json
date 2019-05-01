@@ -2,7 +2,7 @@
   "name": "generator-node-api-boilerplate",
   "version": "0.1.6-beta.0",
   "description": "node js api boilerplate",
-  "homepage": "https://github.com/arunnattarayan/generator-node-es6-api-boilerplate",
+  "homepage": "https://generator-node-es6-api-boilerplate.readthedocs.io/en/latest/#express-app-generator",
   "author": {
     "name": "Arun Nattarayan",
     "email": "arunkumarit02@gmail.com"
