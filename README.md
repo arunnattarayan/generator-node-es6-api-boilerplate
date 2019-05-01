@@ -16,6 +16,9 @@ Then generate your new project:
 yo node-api-boilerplate
 ```
 
+## Usage Document
+[learn more about the generator](https://generator-node-es6-api-boilerplate.readthedocs.io/en/latest/#express-app-generator)
+
 ## Getting To Know Yeoman
 
 Feel free to [learn more about Yeoman](http://yeoman.io/).
