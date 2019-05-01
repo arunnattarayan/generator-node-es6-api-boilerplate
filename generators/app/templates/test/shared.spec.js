@@ -1,6 +1,6 @@
 /* eslint-disable import/first */
 process.env.NODE_ENV = 'test';
-import express from '../scr/server';
+import express from '../src/server';
 import mongoose from 'mongoose';
 process.env.API_BASE = '/api/v1';
 export const request = require('supertest')(express.expressApp());

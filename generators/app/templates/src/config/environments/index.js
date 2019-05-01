@@ -2,10 +2,9 @@ import Developemnt from './development';
 import Production from './production';
 import Test from './test';
 import dotenv from 'dotenv';
-console.log(process.env['NODE_ENV']);
+console.info(process.env['NODE_ENV']);
 process.env['NODE_ENV'] = process.env['NODE_ENV'] || 'development';
 const ENV = process.env.NODE_ENV;
-console.log(ENV, 3333333);
 let instance = null;
 
 class Environment {

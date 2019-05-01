@@ -35,9 +35,7 @@ const files = [
   `test/shared.spec.js`,
   `test/users/users.spec.js`,
   `.babelrc`,
-  `.eslintrc.js`,
-  `.nycrc.json`,
-  `README.md`
+  `.nycrc.json`
 ];
 
 module.exports = class extends Generator {
@@ -55,6 +53,16 @@ module.exports = class extends Generator {
     this.copyTpl(
       this.tPath('_package.json'),
       this.dPath(`${props.dest}/package.json`),
+      props
+    );
+    this.copyTpl(
+      this.tPath('eslintrc.js'),
+      this.dPath(`${props.dest}/.eslintrc.js`),
+      props
+    );
+    this.copyTpl(
+      this.tPath('_README.md'),
+      this.dPath(`${props.dest}/README.md`),
       props
     );
   }

@@ -72,7 +72,7 @@ export default class Express {
 
   errorHandler () {
     process.on('uncaughtException', (err) => {
-      console.log('whoops! There was an uncaught error', err);
+      console.error('whoops! There was an uncaught error', err);
       // do a graceful shutdown,
       // close the database connection etc.
       // process.exit(1);

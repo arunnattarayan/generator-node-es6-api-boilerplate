@@ -16,7 +16,7 @@ class DBConection {
     const db = mongoose.connection;
     db.on('error', console.error.bind(console, 'connection error:'));
     db.once('open', function () {
-      console.log(`${dbConectionString} DB is Connected with this App`);
+      console.info(`${dbConectionString} DB is Connected with this App`);
     });
   }
 }

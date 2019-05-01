@@ -6,7 +6,7 @@ const config = Environment.config;
 
 export default new class Server extends Express {
   constructor () {
-    console.log(config);
+    console.info(config);
     super(config);
     const port = config.PORT;
     if (!serverInstace) {

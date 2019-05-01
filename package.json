@@ -1,6 +1,6 @@
 {
   "name": "generator-node-api-boilerplate",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "node js api boilerplate",
   "homepage": "https://github.com/arunnattarayan/generator-node-es6-api-boilerplate",
   "author": {
@@ -88,7 +88,7 @@
   },
   "scripts": {
     "pretest": "eslint .",
-    "test": "jest"
+    "test": "jest ./__tests__/"
   },
   "repository": "arunnattarayan/generator-node-api-boilerplate",
   "license": "Apache-2.0"

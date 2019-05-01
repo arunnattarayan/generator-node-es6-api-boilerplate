@@ -1,7 +1,8 @@
 module.exports = {
   'env': {
     'es6': true,
-    'node': true
+    'node': true,
+    'mocha': true
   },
   'extends': 'standard',
   'globals': {
@@ -15,4 +16,4 @@ module.exports = {
   'rules': {
     'semi': [1, 'always']
   }
-}
+};
