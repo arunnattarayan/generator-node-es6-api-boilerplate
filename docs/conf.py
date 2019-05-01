@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# node es6 app generator documentation build configuration file, created by
-# sphinx-quickstart on Wed May  1 14:23:43 2019.
+# node api app generator documentation build configuration file, created by
+# sphinx-quickstart on Wed May  1 15:27:26 2019.
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -46,7 +46,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'node es6 app generator'
+project = 'node api app generator'
 copyright = '2019, arunnattarayan'
 author = 'arunnattarayan'
 
@@ -200,7 +200,7 @@ html_static_path = ['_static']
 #html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'nodees6appgeneratordoc'
+htmlhelp_basename = 'nodeapiappgeneratordoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -222,7 +222,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'nodees6appgenerator.tex', 'node es6 app generator Documentation',
+    (master_doc, 'nodeapiappgenerator.tex', 'node api app generator Documentation',
      'arunnattarayan', 'manual'),
 ]
 
@@ -252,7 +252,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'nodees6appgenerator', 'node es6 app generator Documentation',
+    (master_doc, 'nodeapiappgenerator', 'node api app generator Documentation',
      [author], 1)
 ]
 
@@ -266,8 +266,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'nodees6appgenerator', 'node es6 app generator Documentation',
-     author, 'nodees6appgenerator', 'One line description of project.',
+    (master_doc, 'nodeapiappgenerator', 'node api app generator Documentation',
+     author, 'nodeapiappgenerator', 'One line description of project.',
      'Miscellaneous'),
 ]
 

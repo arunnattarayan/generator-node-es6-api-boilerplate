@@ -1,4 +1,4 @@
-# generator-node-api-boilerplate [![NPM version][npm-image]][npm-url][![Codacy Badge][codacy-image]][codacy-url]
+# generator-node-api-boilerplate [![NPM version][npm-image]][npm-url] [![Codacy Badge][codacy-image]][codacy-url] [![Documentation Status][doc-image]][doc-image]
 > node js api boilerplate
 
 ## Installation
@@ -29,4 +29,6 @@ Apache-2.0 © [Arun Nattarayan]()
 [npm-url]: https://npmjs.org/package/generator-node-api-boilerplate
 [codacy-image]: https://api.codacy.com/project/badge/Grade/576f0c11e24040319882f1b450f06772
 [codacy-url]: https://www.codacy.com/app/arunnattarayan/generator-node-es6-api-boilerplate?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=arunnattarayan/generator-node-es6-api-boilerplate&amp;utm_campaign=Badge_Grade
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/
+[doc-image]: https://readthedocs.org/projects/generator-node-es6-api-boilerplate/badge/?version=latest
+[doc-url]: https://generator-node-es6-api-boilerplate.readthedocs.io/en/latest/?badge=latest
+
