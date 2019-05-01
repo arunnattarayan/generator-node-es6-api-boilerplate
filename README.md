@@ -1,4 +1,4 @@
-# generator-node-api-boilerplate [![NPM version][npm-image]][npm-url][![Codacy Badge][codacy-image][codacy-url]]
+# generator-node-api-boilerplate [![NPM version][npm-image]][npm-url][![Codacy Badge][codacy-image]][codacy-url]
 > node js api boilerplate
 
 ## Installation
