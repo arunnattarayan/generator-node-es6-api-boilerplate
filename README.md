@@ -1,5 +1,6 @@
 # generator-node-api-boilerplate [![NPM version][npm-image]][npm-url] [![Codacy Badge][codacy-image]][codacy-url] [![Documentation Status][doc-image]][doc-image]
-> node js api boilerplate
+> Boilerplate and tooling for authoring data API backends with Node.js, JWT and MongoDB. It is best suited for developing a es6 API endpoint as a standalone (micro)service (demo), backing up web front-ends and/or mobile apps. 
+
 
 ## Installation
 
