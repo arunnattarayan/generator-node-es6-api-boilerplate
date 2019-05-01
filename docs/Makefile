@@ -94,9 +94,9 @@ qthelp:
 	@echo
 	@echo "Build finished; now you can run "qcollectiongenerator" with the" \
 	      ".qhcp project file in $(BUILDDIR)/qthelp, like this:"
-	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/node-es6-api-boilerplate.qhcp"
+	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/nodees6appgenerator.qhcp"
 	@echo "To view the help file:"
-	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/node-es6-api-boilerplate.qhc"
+	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/nodees6appgenerator.qhc"
 
 .PHONY: applehelp
 applehelp:
@@ -113,8 +113,8 @@ devhelp:
 	@echo
 	@echo "Build finished."
 	@echo "To view the help file:"
-	@echo "# mkdir -p $$HOME/.local/share/devhelp/node-es6-api-boilerplate"
-	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/node-es6-api-boilerplate"
+	@echo "# mkdir -p $$HOME/.local/share/devhelp/nodees6appgenerator"
+	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/nodees6appgenerator"
 	@echo "# devhelp"
 
 .PHONY: epub
