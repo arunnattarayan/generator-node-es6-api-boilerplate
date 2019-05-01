@@ -1,4 +1,4 @@
-# generator-node-api-boilerplate [![NPM version][npm-image]][npm-url]
+# generator-node-api-boilerplate [![NPM version][npm-image]][npm-url][![Codacy Badge][codacy-image][codacy-url]]
 > node js api boilerplate
 
 ## Installation
@@ -18,10 +18,7 @@ yo node-api-boilerplate
 
 ## Getting To Know Yeoman
 
-* Yeoman has a heart of gold.
-* Yeoman is a person with feelings and opinions, but is very easy to work with.
-* Yeoman can be too opinionated at times but is easily convinced not to be.
-* Feel free to [learn more about Yeoman](http://yeoman.io/).
+Feel free to [learn more about Yeoman](http://yeoman.io/).
 
 ## License
 
@@ -30,3 +27,6 @@ Apache-2.0 © [Arun Nattarayan]()
 
 [npm-image]: https://badge.fury.io/js/generator-node-api-boilerplate.svg
 [npm-url]: https://npmjs.org/package/generator-node-api-boilerplate
+[codacy-image]: https://api.codacy.com/project/badge/Grade/576f0c11e24040319882f1b450f06772
+[codacy-url]: https://www.codacy.com/app/arunnattarayan/generator-node-es6-api-boilerplate?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=arunnattarayan/generator-node-es6-api-boilerplate&amp;utm_campaign=Badge_Grade
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/
