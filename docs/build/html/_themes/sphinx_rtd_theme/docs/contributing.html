@@ -1,0 +1,276 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Contributing or modifying the theme &mdash; test 0.1.6 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="test 0.1.6 documentation" href="../../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> test
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <!-- Local TOC -->
+                <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Contributing or modifying the theme</a><ul>
+<li><a class="reference internal" href="#set-up-your-environment">Set up your environment</a></li>
+<li><a class="reference internal" href="#releasing-the-theme">Releasing the Theme</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">test</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+    <li>Contributing or modifying the theme</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/_themes/sphinx_rtd_theme/docs/contributing.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="contributing-or-modifying-the-theme">
+<h1>Contributing or modifying the theme<a class="headerlink" href="#contributing-or-modifying-the-theme" title="Permalink to this headline">¶</a></h1>
+<p>The sphinx_rtd_theme is primarily a <a class="reference external" href="http://www.sass-lang.com">sass</a> project that requires a few other sass libraries. I&#8217;m
+using <a class="reference external" href="http://www.bower.io">bower</a> to manage these dependencies and <a class="reference external" href="http://www.sass-lang.com">sass</a> to build the css. The good news is
+I have a very nice set of <a class="reference external" href="http://www.gruntjs.com">grunt</a> operations that will not only load these dependencies, but watch
+for changes, rebuild the sphinx demo docs and build a distributable version of the theme.
+The bad news is this means you&#8217;ll need to set up your environment similar to that
+of a front-end developer (vs. that of a python developer). That means installing node and ruby.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">If you are unsure of appropriate actions to take while interacting with our
+community please read our <code class="xref doc docutils literal"><span class="pre">Code</span> <span class="pre">of</span> <span class="pre">Conduct</span></code>.</p>
+</div>
+<div class="section" id="set-up-your-environment">
+<h2>Set up your environment<a class="headerlink" href="#set-up-your-environment" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Install <a class="reference external" href="http://www.sphinx-doc.org/en/stable/">sphinx</a> into a virtual environment.</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>pip install sphinx sphinxcontrib-httpdomain
+</pre></div>
+</div>
+</li>
+<li><p class="first">Install sass.</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>gem install sass
+</pre></div>
+</div>
+</li>
+<li><p class="first">Install node, bower, grunt, and theme dependencies.</p>
+<div class="code bash highlight-python"><div class="highlight"><pre># Install node
+brew install node
+
+# Install bower and grunt
+npm install -g bower grunt-cli
+
+# Now that everything is installed, let&#39;s install the theme dependencies.
+npm install
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Now that our environment is set up, make sure you&#8217;re in your virtual environment, go to
+this repository in your terminal and run grunt:</p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="n">grunt</span>
+</pre></div>
+</div>
+<p>This default task will do the following <strong>very cool things that make it worth the trouble</strong>:</p>
+<ol class="arabic simple">
+<li>Install and update any bower dependencies.</li>
+<li>Run sphinx and build new docs.</li>
+<li>Watch for changes to the sass files and build css from the changes.</li>
+<li>Rebuild the sphinx docs anytime it notices a change to <code class="docutils literal"><span class="pre">.rst</span></code>, <code class="docutils literal"><span class="pre">.html</span></code>, <code class="docutils literal"><span class="pre">.js</span></code>
+or <code class="docutils literal"><span class="pre">.css</span></code> files.</li>
+</ol>
+</div>
+<div class="section" id="releasing-the-theme">
+<h2>Releasing the Theme<a class="headerlink" href="#releasing-the-theme" title="Permalink to this headline">¶</a></h2>
+<p>When you release a new version,
+you should do the following:</p>
+<ol class="arabic">
+<li><p class="first">Bump the version in <code class="docutils literal"><span class="pre">sphinx_rtd_theme/__init__.py</span></code>, <code class="docutils literal"><span class="pre">bower.json</span></code> and <code class="docutils literal"><span class="pre">package.json</span></code> &#8211;
+we try to follow <a class="reference external" href="http://semver.org/">semver</a>, so be careful with breaking changes.</p>
+</li>
+<li><p class="first">Update the changelog (<code class="docutils literal"><span class="pre">docs/changelog.rst</span></code>) with the version information.</p>
+</li>
+<li><p class="first">Run a <code class="docutils literal"><span class="pre">grunt</span> <span class="pre">build</span></code> to rebuild all the theme assets.</p>
+</li>
+<li><p class="first">Commit that change.</p>
+</li>
+<li><p class="first">Tag the release in git: <code class="docutils literal"><span class="pre">git</span> <span class="pre">tag</span> <span class="pre">$NEW_VERSION</span></code>.</p>
+</li>
+<li><p class="first">Push the tag to GitHub: <code class="docutils literal"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">--tags</span> <span class="pre">origin</span></code>.</p>
+</li>
+<li><p class="first">Upload the package to PyPI:</p>
+<blockquote>
+<div><div class="code bash highlight-python"><div class="highlight"><pre>$ rm -rf dist/
+$ python setup.py sdist bdist_wheel
+$ twine upload --sign --identity security@readthedocs.org dist/*
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, arunnattarayan.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.1.6',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
