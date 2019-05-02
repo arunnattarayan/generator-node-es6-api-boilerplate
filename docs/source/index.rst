@@ -1,8 +1,10 @@
 Express App Generator
 ==================================================
+Boilerplate and tooling for authoring data API backends with Node.js, JWT and MongoDB. It is best suited for developing a es6 API endpoint as a standalone (micro)service (demo), backing up web front-ends and/or mobile apps.
 This Generator will help to us create a express api application skeleton along with these keys features
 
  * Code with ES6 Style
+ * components Style coding
  * Eslint Standard
  * JWT authentication
  * Test cases with Mocha
@@ -18,36 +20,18 @@ Requirements
 .. _MongoDB: https://docs.mongodb.com/manual/installation/
 .. _yeoman-generator: https://www.npmjs.com/package/yeoman-generator
 
-Stepup ENV
-----------
-Steps to create a node application skeleton::
+Report
+------
+* Report any issues or feature enhancements in our `tracker`_
+.. _tracker: https://github.com/arunnattarayan/generator-node-es6-api-boilerplate/issues
 
-    $ npm install -g yo
-    $ npm install -g generator-node-api-boilerplate
-    $ yo node-api-boilerplate
-    
-Now the app was created and start running in your system 
 
-Usage
------
+Contents
+--------
 
-start the express server::
+.. toctree::
+    :maxdepth: 2
 
-   $ npm start
- 
-Test The unit testcases::
-   
-   $ npm start
-   
-find Lint issues in source code::
+    quickstart
+    structure
 
-   $ npm run lint
-
-find Lint issues in test cases::
-
-   $ npm run lint:test
-   
-.. note::
- 
- ``npm run lint:test:fix and npm run lint:fix`` used to fix the lint errors 
-    

@@ -46,7 +46,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'test'
+project = 'Express App Generator'
 copyright = '2019, arunnattarayan'
 author = 'arunnattarayan'
 
