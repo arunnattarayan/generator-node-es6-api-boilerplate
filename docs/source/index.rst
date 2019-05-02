@@ -35,9 +35,9 @@ start the express server::
 
    $ npm start
  
-Test The unit testcases::
+Run the test cases::
    
-   $ npm start
+   $ npm test
    
 find Lint issues in source code::
 
@@ -49,5 +49,5 @@ find Lint issues in test cases::
    
 .. note::
  
- ``npm run lint:test:fix and npm run lint:fix`` used to fix the lint errors 
+ ``npm run lint:test:fix`` and ``npm run lint:fix`` used to fix the lint errors 
     
