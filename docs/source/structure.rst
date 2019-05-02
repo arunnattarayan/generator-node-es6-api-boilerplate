@@ -43,6 +43,7 @@ Your project will look like this::
 
 src
 ---
+
 `src` is the source code directory::
 
     ├── src
@@ -61,6 +62,7 @@ Structure your solution by components
 -------------------------------------
 
 Instead of ``MVC`` pattern we recommended components based pattern::
+
     ├── src
     │   ├── app
     │   │   └── auth
@@ -75,8 +77,11 @@ Instead of ``MVC`` pattern we recommended components based pattern::
 
 config
 ------
-::
-    ├── config
+
+* Config folder structure::
+    
+    ├── src
+    |   ├── config
     │   │   ├── db
     │   │   │   └── connection.js
     │   │   ├── environments
@@ -112,6 +117,7 @@ route
 +++++
 
 ::
+
     ├── src
     |   ├── config
     │   │   └── route
