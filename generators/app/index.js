@@ -35,7 +35,10 @@ const files = [
   `test/shared.spec.js`,
   `test/users/users.spec.js`,
   `.babelrc`,
-  `.nycrc.json`
+  `.nycrc.json`,
+  `Dockerfile`,
+  `docker-compose.yml`,
+  `.dockerignore`
 ];
 
 module.exports = class extends Generator {
@@ -102,8 +105,8 @@ module.exports = class extends Generator {
       /* #region installDependencies */
       {
         type: `list`,
-        name: `installDependencies`,
-        message: `Would you like me to install dependencies?`,
+        name: `packageManager`,
+        message: `Choose the package manager`,
         choices: [
           {
             name: `Yes, with npm`,
@@ -116,6 +119,11 @@ module.exports = class extends Generator {
           }
         ],
         default: `yarn`
+      },
+      {
+        type: `confirm`,
+        name: `installDependencies`,
+        message: `Would you like me to install dependencies?`
       }
       /* #endregion */
     ];
@@ -196,10 +204,13 @@ module.exports = class extends Generator {
   install () {
     let props = this.props;
     process.chdir(this._getAppDir(props));
-    if (props.installDependencies === `yarn`) {
-      this.yarnInstall();
-    } else {
-      this.npmInstall();
+    if (props.installDependencies) {
+      this._log(MESSAGE.END);
+      if (props.packageManager === `yarn`) {
+        this.yarnInstall();
+      } else {
+        this.npmInstall();
+      }
     }
   }
 
@@ -208,15 +219,15 @@ module.exports = class extends Generator {
    */
   end () {
     let props = this.props;
-    if (props.installDependencies === `yarn`) {
+    if (props.packageManager === `yarn`) {
       this.spawnCommandSync(`yarn`, [`add`, `@babel/cli`, `--save dev`]);
       this.spawnCommandSync(`yarn`, [`add`, `@babel/core`, `--save dev`]);
     } else {
       this.spawnCommandSync(`npm`, [`install`, `@babel/cli`, `--save dev`]);
       this.spawnCommandSync(`npm`, [`install`, `@babel/core`, `--save dev`]);
     }
+    this.spawnCommandSync(`npm`, 'start');
     this._log(MESSAGE.END);
-    this.spawnCommandSync(`npm`, [`start`]);
   }
   /* #endregion */
 };
