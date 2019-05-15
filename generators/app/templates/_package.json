@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf .build/*",
+    "clean:installDependencies": "rm -rf ./node_modules",
     "build:dev": "babel src -s -D -d .build",
     "start:dev": "npm run clean && npm run build:dev",
     "lint": "./node_modules/.bin/eslint src/**",
@@ -12,6 +13,7 @@
     "lint:fix": "./node_modules/.bin/eslint src/** --fix",
     "lint:test:fix": "./node_modules/.bin/eslint test/** --fix",
     "start": "npm run start:dev && node ./.build/server.js",
+    "docker:clean": "npm run clean:installDependencies",
     "test": "npm run test:coverage:clean && cross-env NODE_ENV=test nyc --reporter=html --reporter=text ./node_modules/mocha/bin/mocha --require @babel/register test/**",
     "test:coverage": "nyc report --reporter=text-lcov | coveralls",
     "test:coverage:clean": "rm -rf coverage/*"
