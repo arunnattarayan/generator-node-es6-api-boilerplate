@@ -5,11 +5,14 @@ import jwt from 'jsonwebtoken';
 import Logger from './logger';
 import Route from './route/route.index';
 import Routes from './route/routes';
+import swaggerUi from 'swagger-ui-express';
 
+const swaggerDocument = require(process.cwd() + '/public/docs/swagger.json');
 const parser = Symbol('parser');
 const logger = Symbol('logger');
 const router = Symbol('router');
 const validateToken = Symbol('validateToken');
+const swagger = Symbol('swagger');
 let ExpressInstance = null;
 
 export default class Express {
@@ -19,6 +22,7 @@ export default class Express {
       this[parser]();
       this[logger]();
       this[router]();
+      this[swagger]();
       this.errorHandler();
       this.config = config;
       ExpressInstance = 'Express';
@@ -68,6 +72,10 @@ export default class Express {
       return true;
     });
     this.exApp.use(Route.fullPath(), router);
+  }
+
+  [swagger] () {
+    this.exApp.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument, {}));
   }
 
   errorHandler () {
