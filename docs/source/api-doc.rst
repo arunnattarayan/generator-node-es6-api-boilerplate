@@ -1,4 +1,4 @@
-.. _label-project-API:
+.. _label-project-apidoc:
 
 API
 ===

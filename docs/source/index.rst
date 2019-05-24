@@ -3,12 +3,12 @@ Express App Generator
 Boilerplate and tooling for authoring data API backends with Node.js, JWT and MongoDB. It is best suited for developing a es6 API endpoint as a standalone (micro)service (demo), backing up web front-ends and/or mobile apps.
 This Generator will help to us create a express api application skeleton along with these keys features
 
- * Code with ES6 Style
  * components Style coding
- * Eslint Standard
+ * Eslint Standard style guide
  * JWT authentication
  * Test cases with Mocha
- * Travis
+ * Docker
+ * Swagger API doc
 
 Requirements
 ------------
@@ -34,4 +34,5 @@ Contents
 
     quickstart
     structure
+    apidoc
 
