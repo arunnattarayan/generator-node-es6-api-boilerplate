@@ -34,6 +34,7 @@ const files = [
   `test/index.js`,
   `test/shared.spec.js`,
   `test/users/users.spec.js`,
+  `public/docs/swagger.json`,
   `.babelrc`,
   `.nycrc.json`,
   `Dockerfile`,
@@ -205,13 +206,13 @@ module.exports = class extends Generator {
     let props = this.props;
     process.chdir(this._getAppDir(props));
     if (props.installDependencies) {
-      this._log(MESSAGE.END);
       if (props.packageManager === `yarn`) {
         this.yarnInstall();
       } else {
         this.npmInstall();
       }
     }
+    this._log(MESSAGE.END);
   }
 
   /**

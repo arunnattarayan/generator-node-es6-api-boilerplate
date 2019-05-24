@@ -1,4 +1,7 @@
-# generator-node-api-boilerplate [![NPM version][npm-image]][npm-url] [![Codacy Badge][codacy-image]][codacy-url] [![Documentation Status][doc-image]][doc-image]
+# generator-node-api-boilerplate 
+
+[![NPM version][npm-image]][npm-url] [![Codacy Badge][codacy-image]][codacy-url] [![Documentation Status][doc-image]][doc-image]
+
 > Boilerplate and tooling for authoring data API backends with Node.js, JWT and MongoDB. It is best suited for developing a es6 API endpoint as a standalone (micro)service (demo), backing up web front-ends and/or mobile apps. 
 
 
@@ -19,6 +22,9 @@ yo node-api-boilerplate
 
 ## Usage Document
 [learn more about the generator](https://generator-node-es6-api-boilerplate.readthedocs.io/en/latest/#express-app-generator)
+
+### API Document
+After app installation run your application using ``npm start`` and load it browser. There you can see the API doc.
 
 ## Getting To Know Yeoman
 

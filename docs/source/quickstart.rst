@@ -21,7 +21,7 @@ start the express server::
  
 Test The unit testcases::
    
-   $ npm start
+   $ npm test
    
 find Lint issues in source code::
 
