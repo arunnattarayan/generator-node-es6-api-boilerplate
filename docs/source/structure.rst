@@ -8,8 +8,11 @@ Your project will look like this::
 
     ├── package.json
     ├── public
-    │   └── logs
-    │       └── access.log
+    │   ├── logs
+    │   |   └── access.log
+    |   ├── docs
+    |   |    └── swagger.json
+    |   |
     ├── README.md
     ├── src
     │   ├── app
