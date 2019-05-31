@@ -4,19 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "clean": "rm -rf .build/*",
-    "clean:installDependencies": "rm -rf ./node_modules",
+    "clean": "rimraf -rf .build/*",
+    "clean:installDependencies": "rimraf -rf ./node_modules",
     "build:dev": "babel src -s -D -d .build",
     "start:dev": "npm run clean && npm run build:dev",
     "lint": "./node_modules/.bin/eslint src/**",
     "lint:test": "./node_modules/.bin/eslint test/**",
     "lint:fix": "./node_modules/.bin/eslint src/** --fix",
     "lint:test:fix": "./node_modules/.bin/eslint test/** --fix",
-    "start": "npm run start:dev && node ./.build/server.js",
+    "start": "npm run start:dev && node debug ./.build/server.js",
     "docker:clean": "npm run clean:installDependencies",
     "test": "npm run test:coverage:clean && cross-env NODE_ENV=test nyc --reporter=html --reporter=text ./node_modules/mocha/bin/mocha --require @babel/register test/**",
     "test:coverage": "nyc report --reporter=text-lcov | coveralls",
-    "test:coverage:clean": "rm -rf coverage/*"
+    "test:coverage:clean": "rimraf -rf coverage/*"
   },
   "standard": {
     "parser": "babel-eslint"
@@ -53,7 +53,8 @@
     "nyc": "^10.3.2",
     "sinon": "^7.3.2",
     "standard": "^8.4.0",
-    "supertest": "^4.0.2"
+    "supertest": "^4.0.2",
+    "rimraf": "^2.6.3"
   },
   "dependencies": {
     "bcrypt": "^3.0.6",
