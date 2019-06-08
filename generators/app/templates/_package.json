@@ -12,7 +12,7 @@
     "lint:test": "./node_modules/.bin/eslint test/**",
     "lint:fix": "./node_modules/.bin/eslint src/** --fix",
     "lint:test:fix": "./node_modules/.bin/eslint test/** --fix",
-    "start": "npm run start:dev && node debug ./.build/server.js",
+    "start": "npm run start:dev && node ./.build/server.js",
     "docker:clean": "npm run clean:installDependencies",
     "test": "npm run test:coverage:clean && cross-env NODE_ENV=test nyc --reporter=html --reporter=text ./node_modules/mocha/bin/mocha --require @babel/register test/**",
     "test:coverage": "nyc report --reporter=text-lcov | coveralls",
