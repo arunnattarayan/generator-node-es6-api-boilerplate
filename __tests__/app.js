@@ -1,16 +1,28 @@
-'use strict';
-// const path = require('path');
+const path = require('path');
 // const assert = require('yeoman-assert');
-// const helpers = require('yeoman-test');
+const helpers = require('yeoman-test');
 
-describe('generator-node-api-boilerplate:app', () => {
-  // beforeAll(() => {
-  //   return helpers
-  //     .run(path.join(__dirname, '../generators/app'))
-  //     .withPrompts({ someAnswer: true });
-  // });
+let props;
+let prompts;
 
-  it('creates files', () => {
-    // assert.noFile(['templates/.babelrc']);
+describe('app', () => {
+  beforeAll((done) => {
+    prompts = [
+      {
+        createDirectory: true,
+        name: 'node-api',
+        installDependencies: false
+      }
+    ];
+    props = prompts;
+    return helpers.run(path.join(process.cwd() + '/generators/app'))
+      .withPrompts(prompts)
+      .on('end', done);
+  });
+
+  it('should store prompt answers on props object', () => {
+    expect(props.name).toEqual(prompts.name);
+    expect(props.createDirectory).toEqual(prompts.createDirectory);
+    expect(props.installDependencies).toEqual(prompts.installDependencies);
   });
 });

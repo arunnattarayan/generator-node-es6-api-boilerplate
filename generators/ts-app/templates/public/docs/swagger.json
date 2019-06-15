@@ -1,0 +1,254 @@
+{
+	"openapi": "3.0.0",
+	"servers": [
+		{
+			"description": "local api",
+			"url": "http://localhost:3000/api/v1/"
+		}
+	],
+	"info": {
+		"description": "This is a simple API",
+		"version": "1.0.0",
+		"title": "Simple Inventory API",
+		"contact": {
+			"email": "arunkumarit02@gmail.com"
+		},
+		"license": {
+			"name": "Apache 2.0",
+			"url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+		}
+	},
+	"tags": [
+		{
+			"name": "users"
+		},
+		{
+			"name": "login"
+		},
+		{
+			"name": "register"
+		}
+	],
+	"paths": {
+		"/auth/register": {
+			"post": {
+				"tags": [
+					"register"
+				],
+				"operationId": "AuthRegister",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/Register"
+							}
+						}
+					}
+				},
+				"responses": {
+					"201": {
+						"description": "access token to use access api",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"items": {
+										"$ref": "#/components/schemas/auth"
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "invalid parameters"
+					}
+				}
+			}
+		},
+		"/auth/login": {
+			"post": {
+				"tags": [
+					"login"
+				],
+				"operationId": "AuthLogin",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/Login"
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "access token to use access api",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"items": {
+										"$ref": "#/components/schemas/auth"
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "invalid login"
+					}
+				}
+			}
+		},
+		"/users": {
+			"get": {
+				"tags": [
+					"users"
+				],
+				"summary": "searches users",
+				"operationId": "searchUser",
+				"parameters": [
+					{
+						"name": "x-access-token",
+						"in": "header",
+						"description": "get token from login api.",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "search results matching criteria",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/userItem"
+									}
+								}
+							}
+						}
+					},
+					"403": {
+						"description": "invalid Access"
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"userItem": {
+				"type": "object",
+				"required": [
+					"_id",
+					"firstName",
+					"lastName",
+					"userName",
+					"email",
+					"created_at",
+					"updated_at"
+				],
+				"properties": {
+					"_id": {
+						"type": "string",
+						"format": "uuid",
+						"example": "d290f1ee-6c54-4b01-90e6-d701748f0851"
+					},
+					"firstName": {
+						"type": "string",
+						"example": "Arun"
+					},
+					"lastName": {
+						"type": "string",
+						"example": "nattarayan"
+					},
+					"userName": {
+						"type": "string",
+						"example": "arunnattarayan"
+					},
+					"email": {
+						"type": "string",
+						"format": "email",
+						"example": "arun@example.com"
+					},
+					"created_at": {
+						"type": "string",
+						"format": "date-time",
+						"example": "2016-08-29T09:12:33.001Z"
+					},
+					"updated_at": {
+						"type": "string",
+						"format": "date-time",
+						"example": "2016-08-29T09:12:33.001Z"
+					}
+				}
+			},
+			"auth": {
+				"type": "object",
+				"required": [
+					"token"
+				],
+				"properties": {
+					"token": {
+						"type": "string",
+						"example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFydW5AYWdpcmF0ZWNoLmNvbSIsIl9pZCI6IjVjZGNlY2YzODQ1NTYwMzQ4YzJlYzNkOSIsImlhdCI6MTU1ODcxMDYxNH0.ctiRGQUjCl7h3uRIZcIpPEFtWQ5TulwUBdm4MeYRmlA"
+					}
+				}
+			},
+			"Login": {
+				"type": "object",
+				"required": [
+					"userName",
+					"password"
+				],
+				"properties": {
+					"userName": {
+						"type": "string",
+						"example": "arunnattarayan"
+					},
+					"password": {
+						"type": "string",
+						"example": "arun"
+					}
+				}
+			},
+			"Register": {
+				"type": "object",
+				"required": [
+					"userName",
+					"password",
+					"firstName",
+					"lastName",
+					"email"
+				],
+				"properties": {
+					"firstName": {
+						"type": "string",
+						"example": "Arun"
+					},
+					"lastName": {
+						"type": "string",
+						"example": "nattarayan"
+					},
+					"userName": {
+						"type": "string",
+						"example": "arunnattarayan"
+					},
+					"password": {
+						"type": "string",
+						"example": "arun"
+					},
+					"email": {
+						"type": "string",
+						"format": "email",
+						"example": "arun@example.com"
+					}
+				}
+			}
+		}
+	}
+}

@@ -9,9 +9,10 @@ const path = require('path');
 const MESSAGE = {
   INIT: `${chalk.yellow.bold('Welcome to Express Api ')} ${chalk.yellow('A solid JS stack to develop with')}`,
   CONFIG: `${chalk.yellow.bold('Started APP Configurations')}`,
-  WRITE: `${chalk.yellow.bold('Creating App Files')}`,
-  END: `${chalk.green.bold('App files are created.')}`,
-  INSTALL: `${chalk.yellow.bold('Installling Dependencies')}`
+  WRITE: `${chalk.green.bold('Creating App Files')}`,
+  END: `${chalk.blue.bold('App files are created.')} ${chalk.yellow.bold('npm start')} ${chalk.blue.bold('to kickoff the server')}`,
+  INSTALL: `${chalk.yellow.bold('Installling Dependencies')}`,
+  CONFLICT: `${chalk.red.bold('-----------------')}`
 };
 const files = [
   `src/server.js`,
@@ -72,11 +73,13 @@ module.exports = class extends Generator {
   }
 
   _log (message) {
-    this.log(yosay(message, { maxLength: 18 }));
+    this.log('\n');
+    this.log('\t', message);
+    this.log('\n\n');
   }
 
   _yosay (message) {
-    this._log(yosay(message, { maxLength: 18 }));
+    this.log(yosay(message, { maxLength: 18 }));
   }
 
   _getAppDir (props) {
@@ -103,6 +106,22 @@ module.exports = class extends Generator {
         default: this.appname
       },
       /* #endregion */
+      /* #region ts */
+      {
+        type: `confirm`,
+        name: `ts`,
+        message: `Create app with Type Script`,
+        default: true
+      },
+      /* #endregion */
+      /* #region installDependencies */
+      {
+        type: `confirm`,
+        name: `installDependencies`,
+        message: `Would you like me to install dependencies?`,
+        default: false
+      },
+      /* #endregion */
       /* #region installDependencies */
       {
         type: `list`,
@@ -119,12 +138,10 @@ module.exports = class extends Generator {
             checked: true
           }
         ],
+        when: function (props) {
+          return props.installDependencies;
+        },
         default: `yarn`
-      },
-      {
-        type: `confirm`,
-        name: `installDependencies`,
-        message: `Would you like me to install dependencies?`
       }
       /* #endregion */
     ];
@@ -144,7 +161,8 @@ module.exports = class extends Generator {
    * Display welcome message
    */
   initializing () {
-    this.log(yosay(MESSAGE.INIT, { maxLength: 18 }));
+    // this.log(yosay(MESSAGE.INIT, { maxLength: 18 }));
+    this._yosay(MESSAGE.INIT);
   }
 
   /**
@@ -173,23 +191,27 @@ module.exports = class extends Generator {
   writing () {
     this._log(MESSAGE.WRITE);
     let props = this.props;
-    props.projectName = props.name || this.appname;
-    props.dest = props.name || `.`;
-    this.sourceRoot();
-    this.destinationPath(props.dest);
-    const copyOpts = {
-      globOptions: {
-        ignore: ['_package.json']
-      }
-    };
-    this.copy = this.fs.copy.bind(this.fs);
-    this.copyTpl = this.fs.copyTpl.bind(this.fs);
-    this.tPath = this.templatePath.bind(this);
-    this.dPath = this.destinationPath.bind(this);
-    mkdirp(`${props.dest}/public/logs`, err => {
-      if (err) console.error(err);
-      this._createProjectFileSystem(props, copyOpts);
-    });
+    if (props.ts) {
+      this.composeWith(require.resolve('../ts-app'), { props: props });
+    } else {
+      props.projectName = props.name || this.appname;
+      props.dest = props.name || `.`;
+      this.sourceRoot();
+      this.destinationPath(props.dest);
+      const copyOpts = {
+        globOptions: {
+          ignore: ['_package.json']
+        }
+      };
+      this.copy = this.fs.copy.bind(this.fs);
+      this.copyTpl = this.fs.copyTpl.bind(this.fs);
+      this.tPath = this.templatePath.bind(this);
+      this.dPath = this.destinationPath.bind(this);
+      mkdirp(`${props.dest}/public/logs`, err => {
+        if (err) console.error(err);
+        this._createProjectFileSystem(props, copyOpts);
+      });
+    }
   }
 
   /**
@@ -204,30 +226,20 @@ module.exports = class extends Generator {
    */
   install () {
     let props = this.props;
-    process.chdir(this._getAppDir(props));
     if (props.installDependencies) {
+      process.chdir(this._getAppDir(props));
       if (props.packageManager === `yarn`) {
         this.yarnInstall();
       } else {
         this.npmInstall();
       }
     }
-    this._log(MESSAGE.END);
   }
 
   /**
    * Post installation
    */
   end () {
-    let props = this.props;
-    if (props.packageManager === `yarn`) {
-      this.spawnCommandSync(`yarn`, [`add`, `@babel/cli`, `--save dev`]);
-      this.spawnCommandSync(`yarn`, [`add`, `@babel/core`, `--save dev`]);
-    } else {
-      this.spawnCommandSync(`npm`, [`install`, `@babel/cli`, `--save dev`]);
-      this.spawnCommandSync(`npm`, [`install`, `@babel/core`, `--save dev`]);
-    }
-    this.spawnCommandSync(`npm`, 'start');
     this._log(MESSAGE.END);
   }
   /* #endregion */
