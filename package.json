@@ -1,7 +1,7 @@
 {
   "name": "generator-node-api-boilerplate",
-  "version": "0.3.0",
-  "description": "Boilerplate and tooling for authoring data API backends with Node.js, JWT and MongoDB. It is best suited for developing a es6 API endpoint as a standalone (micro)service (demo), backing up web front-ends and/or mobile apps",
+  "version": "0.4.0",
+  "description": "Boilerplate and tooling for authoring data API backends with Node.js, JWT and MongoDB. It is best suited for developing a es6/type script API endpoint as a standalone (micro)service (demo), backing up web front-ends and/or mobile apps",
   "homepage": "https://generator-node-es6-api-boilerplate.readthedocs.io/en/latest/#express-app-generator",
   "author": {
     "name": "Arun Nattarayan",
@@ -22,7 +22,10 @@
     "MongoDB",
     "Mongoose",
     "Docker",
-    "Swagger API Doc"
+    "Swagger API Doc",
+    "type script",
+    "Type Script",
+    "TypeScript"
   ],
   "devDependencies": {
     "coveralls": "^3.0.3",
