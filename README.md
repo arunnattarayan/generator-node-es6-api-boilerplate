@@ -1,6 +1,6 @@
 # generator-node-api-boilerplate 
 
-[![NPM version][npm-image]][npm-url] [![Codacy Badge][codacy-image]][codacy-url] [![Documentation Status][doc-image]][doc-image]
+[![NPM version][npm-image]][npm-url] [![Codacy Badge][codacy-image]][codacy-url] [![Documentation Status][doc-image]][doc-image] [![Build Status][build-image]][build-url]
 
 > Boilerplate and tooling for authoring data API backends with Node.js, JWT and MongoDB. It is best suited for developing a es6 API endpoint as a standalone (micro)service (demo), backing up web front-ends and/or mobile apps. 
 
@@ -41,4 +41,6 @@ Apache-2.0 © [Arun Nattarayan]()
 [codacy-url]: https://www.codacy.com/app/arunnattarayan/generator-node-es6-api-boilerplate?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=arunnattarayan/generator-node-es6-api-boilerplate&amp;utm_campaign=Badge_Grade
 [doc-image]: https://readthedocs.org/projects/generator-node-es6-api-boilerplate/badge/?version=latest
 [doc-url]: https://generator-node-es6-api-boilerplate.readthedocs.io/en/latest/?badge=latest
+[build-image]: https://cloud.drone.io/api/badges/arunnattarayan/generator-node-es6-api-boilerplate/status.svg?ref=refs/heads/master
+[build-url]: https://cloud.drone.io/arunnattarayan/generator-node-es6-api-boilerplate
 
